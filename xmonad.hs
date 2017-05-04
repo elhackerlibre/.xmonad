@@ -33,7 +33,7 @@ myFocusFollowsMouse     =  True
 -- Función * main *
 --
 main = do
-    xmproc <- spawnPipe "xmobar ~/.xmobarrc"
+    xmproc <- spawnPipe "xmobar ~/.xmonad/xmobarrc"
    -- Startup:
     spawn "mpd"
     spawn "numlock on"
