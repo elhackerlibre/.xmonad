@@ -3,8 +3,9 @@ My settings xmonad, xmobar, getvolume
 
 Install:
 
-Copy the .xmonad directory into your $ HOME
-Git clone https://github.com/elhackerlibre/.xmonad.git
+Copy the .xmonad directory into your $ HOME.
+
+git clone https://github.com/elhackerlibre/.xmonad.git
 --------------------------------------------------------
 Configure:
 
