@@ -1,0 +1,20 @@
+Config { font = "-*-Fixed-Bold-R-Normal-*-13-*-*-*-*-*-*-*"
+        , borderColor = "#202020"
+        , border = BottomB
+        , bgColor = "#202020"
+        , fgColor = "grey"
+        , position = TopW L 100
+        , commands = [ Run Weather "SVMC" ["-t","<tempC>°C","-L","18","-H","25","--normal","green","--high","darkorange","--low","lightblue"] 36000
+                     , Run Network "wlan0" ["-L","0","-H","32","--normal","green","--high","darkorange"] 10
+                     , Run MultiCpu ["-t","Cpu: <total0>%|<total1>%","--H","85","-L","50","--normal","green","--low","darkorange","--high","red"] 10  
+                     , Run CoreTemp ["-t","Temp: <core0>°C|<core1>°C","-H","80","-L","70","--normal","green","--low","darkorange","--high","red"] 50
+                     , Run Memory ["-t","Mem: <usedratio>%"] 10
+                     , Run Swap [] 10
+                     , Run Date "%a %d %b %Y %I:%M:%P" "date" 10
+                     , Run Com "/bin/bash" ["-c", "~/.xmonad/getvolume" ] "myvolume" 9
+                     , Run StdinReader
+                     ]
+        , sepChar = "%"
+        , alignSep = "}{"
+        , template = "%StdinReader% }{ %multicpu% * %coretemp% | %memory% * %swap% | <fc=grey>Vol:</fc> <fc=#EE9A00>%myvolume%</fc> | %wlan0% | <fc=#ee9a00>%date%</fc> | W: %SVMC% "
+        }
